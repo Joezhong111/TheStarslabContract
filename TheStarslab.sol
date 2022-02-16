@@ -1571,11 +1571,6 @@ contract TheStarslab is ERC721Enumerable, Ownable {
                     require(_mappingMintCount[msg.sender] <= PUBLIC_MINT_LIMIT + PRESALE_MINT_LIMIT,"Overflow for PUBLIC_MINT_LIMIT + PRESALE_MINT_LIMIT");
                 }
             }
-
-            uint256 amount1 = (msg.value * 95) / 100;
-            uint256 amount2 = (msg.value * 5) / 100;
-            _PaymentAddress1.transfer(amount1);
-            _PaymentAddress2.transfer(amount2);
         }
 
         for (uint256 i = 0; i < numberOfTokens; i++) {
@@ -1601,8 +1596,10 @@ contract TheStarslab is ERC721Enumerable, Ownable {
     }
 
     function withdraw() external onlyOwner {
-        uint256 balance = address(this).balance;
-
-        payable(msg.sender).transfer(balance);
+      uint256 balance = address(this).balance;
+      uint256 amount1 = (balance * 9500) / 10000; // 95%
+      uint256 amount2 = (balance * 500) / 10000; // 5%
+      _PaymentAddress1.transfer(amount1);
+      _PaymentAddress2.transfer(amount2);
     }
 }
