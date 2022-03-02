@@ -1301,10 +1301,10 @@ contract TheStarslab is Ownable, ERC721 {
     address payable private _PaymentAddress2 = payable(0x39968b14C7A25ce05072dafe2caa4D6a3Bb6b839);
 
     uint256 public MAX_SUPPLY = 9999;
-    uint256 public PRESALE_PRICE = 0.001 ether; // 0.125 ETH
-    uint256 public PUBLIC_PRICE = 0.001 ether; // 0.15 ETH
+    uint256 public PRESALE_PRICE = 0.125 ether; // 0.125 ETH
+    uint256 public PUBLIC_PRICE = 0.15 ether; // 0.15 ETH
     uint256 private REVEAL_DELAY =  120 hours;
-    uint256 private PRESALE_HOURS = 0 hours;
+    uint256 private PRESALE_HOURS = 24 hours;
     uint256 public PRESALE_MINT_LIMIT = 2;
     uint256 public PUBLIC_MINT_LIMIT = 3;
 
