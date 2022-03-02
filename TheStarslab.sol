@@ -1583,16 +1583,12 @@ contract TheStarslab is ERC721Enumerable, Ownable {
         _tokenBaseURI = baseURI;
     }
 
-    function airdrop(address[] memory airdropAddress, uint256 numberOfTokens) external onlyOwner {
-        for (uint256 k = 0; k < airdropAddress.length; k++) {
-            for (uint256 i = 0; i < numberOfTokens; i++) {
-                uint256 tokenId = _publicCounter.current();
-
-                if (_publicCounter.current() < MAX_SUPPLY) {
-                    _publicCounter.increment();
-                    if (!_exists(tokenId)) _safeMint(airdropAddress[k], tokenId);
-                }
-            }
+    function airdrop(address[] calldata addresses) external onlyOwner {
+        uint256 supply = _publicCounter.current();
+        require(supply + addresses.length <= MAX_SUPPLY,  "This would exceed the max number of allowed nft");
+        for (uint256 i; i < addresses.length ; i++) {
+            _publicCounter.increment();
+            _mint(addresses[i], supply + i);   
         }
     }
 
