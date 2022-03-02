@@ -1151,9 +1151,10 @@ interface IERC721Enumerable is IERC721 {
     function tokenByIndex(uint256 index) external view returns (uint256);
 }
 
-// File: openzeppelin-solidity\contracts\access\Ownable.sol
+// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
 
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.0;
+
 
 /**
  * @dev Contract module which provides a basic access control mechanism, where
@@ -1169,21 +1170,14 @@ pragma solidity ^0.8.9;
  */
 abstract contract Ownable is Context {
     address private _owner;
-    address private _creator;
 
-    event OwnershipTransferred(
-        address indexed previousOwner,
-        address indexed newOwner
-    );
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     /**
      * @dev Initializes the contract setting the deployer as the initial owner.
      */
     constructor() {
-        address msgSender = _msgSender();
-        _owner = msgSender;
-        _creator = msgSender;
-        emit OwnershipTransferred(address(0), msgSender);
+        _transferOwnership(_msgSender());
     }
 
     /**
@@ -1197,10 +1191,7 @@ abstract contract Ownable is Context {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(
-            owner() == _msgSender() || _creator == _msgSender(),
-            "Ownable: caller is not the owner"
-        );
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
         _;
     }
 
@@ -1212,8 +1203,7 @@ abstract contract Ownable is Context {
      * thereby removing any functionality that is only available to the owner.
      */
     function renounceOwnership() public virtual onlyOwner {
-        emit OwnershipTransferred(_owner, address(0));
-        _owner = address(0);
+        _transferOwnership(address(0));
     }
 
     /**
@@ -1221,12 +1211,18 @@ abstract contract Ownable is Context {
      * Can only be called by the current owner.
      */
     function transferOwnership(address newOwner) public virtual onlyOwner {
-        require(
-            newOwner != address(0),
-            "Ownable: new owner is the zero address"
-        );
-        emit OwnershipTransferred(_owner, newOwner);
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        _transferOwnership(newOwner);
+    }
+
+    /**
+     * @dev Transfers ownership of the contract to a new account (`newOwner`).
+     * Internal function without access restriction.
+     */
+    function _transferOwnership(address newOwner) internal virtual {
+        address oldOwner = _owner;
         _owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
     }
 }
 
@@ -1523,8 +1519,8 @@ contract TheStarslab is ERC721Enumerable, Ownable {
     address payable private _PaymentAddress2 = payable(0x39968b14C7A25ce05072dafe2caa4D6a3Bb6b839);
 
     uint256 public MAX_SUPPLY = 9999;
-    uint256 public PRESALE_PRICE = 0.125 ether; // 0.25 ETH
-    uint256 public PUBLIC_PRICE = 0.15 ether; // 0.25 ETH
+    uint256 public PRESALE_PRICE = 0.001 ether; // 0.125 ETH
+    uint256 public PUBLIC_PRICE = 0.001 ether; // 0.15 ETH
     uint256 private REVEAL_DELAY =  120 hours;
     uint256 private PRESALE_HOURS = 0 hours;
     uint256 public PRESALE_MINT_LIMIT = 2;
