@@ -1,6 +1,10 @@
+/**
+ *Submitted for verification at Etherscan.io on 2022-02-25
+*/
+
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev Interface of the ERC165 standard, as defined in the
@@ -11,6 +15,15 @@ pragma solidity ^0.8.0;
  *
  * For an implementation, see {ERC165}.
  */
+ /**
+ ______ __                  ____    __                        __              __        
+/\__  _/\ \                /\  _`\ /\ \__                    /\ \            /\ \       
+\/_/\ \\ \ \___      __    \ \,\L\_\ \ ,_\    __    _ __  ___\ \ \        __ \ \ \____  
+   \ \ \\ \  _ `\  /'__`\   \/_\__ \\ \ \/  /'__`\ /\`'__/',__\ \ \  __ /'__`\\ \ '__`\ 
+    \ \ \\ \ \ \ \/\  __/     /\ \L\ \ \ \_/\ \L\.\\ \ \/\__, `\ \ \L\ /\ \L\.\\ \ \L\ \
+     \ \_\\ \_\ \_\ \____\    \ `\____\ \__\ \__/.\_\ \_\/\____/\ \____\ \__/.\_\ \_,__/
+      \/_/ \/_/\/_/\/____/     \/_____/\/__/\/__/\/_/\/_/\/___/  \/___/ \/__/\/_/\/___/ 
+  */
 interface IERC165 {
     /**
      * @dev Returns true if this contract implements the interface defined by
@@ -25,7 +38,7 @@ interface IERC165 {
 
 // File: node_modules\openzeppelin-solidity\contracts\token\ERC721\IERC721.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev Required interface of an ERC721 compliant contract.
@@ -184,7 +197,7 @@ interface IERC721 is IERC165 {
 
 // File: node_modules\openzeppelin-solidity\contracts\token\ERC721\IERC721Receiver.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @title ERC721 token receiver interface
@@ -211,7 +224,7 @@ interface IERC721Receiver {
 
 // File: node_modules\openzeppelin-solidity\contracts\token\ERC721\extensions\IERC721Metadata.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional metadata extension
@@ -236,7 +249,7 @@ interface IERC721Metadata is IERC721 {
 
 // File: node_modules\openzeppelin-solidity\contracts\utils\Address.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev Collection of functions related to the address type
@@ -286,7 +299,7 @@ library Address {
      * IMPORTANT: because control is transferred to `recipient`, care must be
      * taken to not create reentrancy vulnerabilities. Consider using
      * {ReentrancyGuard} or the
-     * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
+     * https://solidity.readthedocs.io/en/v0.5.9/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      */
     function sendValue(address payable recipient, uint256 amount) internal {
         require(
@@ -490,7 +503,7 @@ library Address {
 
 // File: node_modules\openzeppelin-solidity\contracts\utils\Context.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /*
  * @dev Provides information about the current execution context, including the
@@ -515,7 +528,7 @@ abstract contract Context {
 
 // File: node_modules\openzeppelin-solidity\contracts\utils\Strings.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev String operations.
@@ -586,7 +599,7 @@ library Strings {
 
 // File: node_modules\openzeppelin-solidity\contracts\utils\introspection\ERC165.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev Implementation of the {IERC165} interface.
@@ -619,7 +632,7 @@ abstract contract ERC165 is IERC165 {
 
 // File: node_modules\openzeppelin-solidity\contracts\token\ERC721\ERC721.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard, including
@@ -1110,7 +1123,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
 
 // File: node_modules\openzeppelin-solidity\contracts\token\ERC721\extensions\IERC721Enumerable.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension
@@ -1140,7 +1153,7 @@ interface IERC721Enumerable is IERC721 {
 
 // File: openzeppelin-solidity\contracts\access\Ownable.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev Contract module which provides a basic access control mechanism, where
@@ -1219,7 +1232,7 @@ abstract contract Ownable is Context {
 
 // File: openzeppelin-solidity\contracts\token\ERC721\extensions\ERC721Enumerable.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @dev This implements an optional extension of {ERC721} defined in the EIP that adds
@@ -1407,7 +1420,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
 
 // File: contracts\lib\Counters.sol
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 /**
  * @title Counters
@@ -1444,39 +1457,94 @@ library Counters {
     }
 }
 
-pragma solidity ^0.8.0;
+// File: @openzeppelin/contracts/utils/cryptography/MerkleProof.sol
+
+
+// OpenZeppelin Contracts v4.4.1 (utils/cryptography/MerkleProof.sol)
+
+pragma solidity ^0.8.9;
+
+/**
+ * @dev These functions deal with verification of Merkle Trees proofs.
+ *
+ * The proofs can be generated using the JavaScript library
+ * https://github.com/miguelmota/merkletreejs[merkletreejs].
+ * Note: the hashing algorithm should be keccak256 and pair sorting should be enabled.
+ *
+ * See `test/utils/cryptography/MerkleProof.test.js` for some examples.
+ */
+library MerkleProof {
+    /**
+     * @dev Returns true if a `leaf` can be proved to be a part of a Merkle tree
+     * defined by `root`. For this, a `proof` must be provided, containing
+     * sibling hashes on the branch from the leaf to the root of the tree. Each
+     * pair of leaves and each pair of pre-images are assumed to be sorted.
+     */
+    function verify(
+        bytes32[] memory proof,
+        bytes32 root,
+        bytes32 leaf
+    ) internal pure returns (bool) {
+        return processProof(proof, leaf) == root;
+    }
+
+    /**
+     * @dev Returns the rebuilt hash obtained by traversing a Merklee tree up
+     * from `leaf` using `proof`. A `proof` is valid if and only if the rebuilt
+     * hash matches the root of the tree. When processing the proof, the pairs
+     * of leafs & pre-images are assumed to be sorted.
+     *
+     * _Available since v4.4._
+     */
+    function processProof(bytes32[] memory proof, bytes32 leaf) internal pure returns (bytes32) {
+        bytes32 computedHash = leaf;
+        for (uint256 i = 0; i < proof.length; i++) {
+            bytes32 proofElement = proof[i];
+            if (computedHash <= proofElement) {
+                // Hash(current computed hash + current element of the proof)
+                computedHash = keccak256(abi.encodePacked(computedHash, proofElement));
+            } else {
+                // Hash(current element of the proof + current computed hash)
+                computedHash = keccak256(abi.encodePacked(proofElement, computedHash));
+            }
+        }
+        return computedHash;
+    }
+}
+
+
+pragma solidity ^0.8.9;
 
 contract TheStarslab is ERC721Enumerable, Ownable {
     using Counters for Counters.Counter;
     using Strings for uint256;
 
-    address payable private _PaymentAddress1 = payable(0x4BBf311735e588356C41F3DDFb66d5510e45F617);
-    address payable private _PaymentAddress2 = payable(0x808e9737F232D91f67DaCc2187978F5D05C0c3a6);
+    address payable private _PaymentAddress1 = payable(0x7d0F904ccCc7fA01383d5cEd1944774BAc3508b3);
+    address payable private _PaymentAddress2 = payable(0x39968b14C7A25ce05072dafe2caa4D6a3Bb6b839);
 
-    uint256 public TSL_MAX = 9999;
-    uint256 public PRESALE_PRICE = 200_000_000_000_000_000; // 0.2 ETH
-    uint256 public PUBLIC_PRICE = 200_000_000_000_000_000; // 0.2 ETH
-    uint256 private REVEAL_DELAY = 0 hours;
-    uint256 private PRESALE_HOURS = 27 days;
-    uint256 public PURCHASE_LIMIT = 5;
-    uint256 public PRESALE_MINT_LIMIT = 1;
-    uint256 public PUBLIC_MINT_LIMIT = 5;
-    
-    mapping(address => bool) _mappingWhiteList;
-    mapping(uint256 => uint256) _mappingMintTimestamp;
-    mapping(address => uint256) _mappingMintCount;
+    uint256 public MAX_SUPPLY = 9999;
+    uint256 public PRESALE_PRICE = 0.125 ether; // 0.25 ETH
+    uint256 public PUBLIC_PRICE = 0.15 ether; // 0.25 ETH
+    uint256 private REVEAL_DELAY =  120 hours;
+    uint256 private PRESALE_HOURS = 0 hours;
+    uint256 public PRESALE_MINT_LIMIT = 2;
+    uint256 public PUBLIC_MINT_LIMIT = 3;
 
-    bool private _presaleEnabled = false;
-    uint256 private _activeDateTime = 1643346000; // Date and time (GMT): Friday, January 28, 2022 5:00:00 AM
-    
+    mapping(address => uint256) _mappingPresaleMintCount;
+    mapping(address => uint256) _mappingPublicMintCount;
+
+    bytes32 private _whitelistRoot;
+
+    uint256 private _activeDateTime = 1646218800; // Date and time (GMT): Tuesday, March 1, 2022 12:00:00 AM
+
     string private _tokenBaseURI = "";
     string private _revealURI = "";
-    
-    Counters.Counter private _publicTSL;
 
-    constructor() ERC721("TheStarslab", "TSL") {}
+    Counters.Counter private _publicCounter;
 
-    function setPaymentAddress( address paymentAddress1, address paymentAddress2) external onlyOwner {
+    constructor() ERC721("TheStarsLab", "TSL") {}
+
+    function setPaymentAddress(address paymentAddress1, address paymentAddress2) external onlyOwner {
         _PaymentAddress1 = payable(paymentAddress1);
         _PaymentAddress2 = payable(paymentAddress2);
     }
@@ -1489,15 +1557,8 @@ contract TheStarslab is ERC721Enumerable, Ownable {
         REVEAL_DELAY = revealDelay;
     }
 
-    function setPresaleHours (uint256 presaleHours) external onlyOwner {
+    function setPresaleHours(uint256 presaleHours) external onlyOwner {
         PRESALE_HOURS = presaleHours;
-    }
-
-    function setWhiteList(address[] memory whiteListAddress, bool bEnable) external onlyOwner {
-        for (uint256 i = 0; i < whiteListAddress.length; i++) {
-            _mappingWhiteList[whiteListAddress[i]] = bEnable;
-        }
-        _presaleEnabled = true;
     }
 
     function setMintPrice(uint256 presaleMintPrice, uint256 publicMintPrice) external onlyOwner {
@@ -1505,90 +1566,100 @@ contract TheStarslab is ERC721Enumerable, Ownable {
         PUBLIC_PRICE = publicMintPrice;
     }
 
-    function setPresaleEnable(bool bEnabled) external onlyOwner {
-        _presaleEnabled = bEnabled;
-    }
-    
     function setMaxLimit(uint256 maxLimit) external onlyOwner {
-        TSL_MAX = maxLimit;
+        MAX_SUPPLY = maxLimit;
     }
 
-    function setPurchaseLimit(uint256 purchaseLimit, uint256 presaleMintLimit, uint256 publicMintLimit) external onlyOwner {
-        PURCHASE_LIMIT = purchaseLimit;
+    function setPurchaseLimit( uint256 presaleMintLimit, uint256 publicMintLimit) external onlyOwner {
         PRESALE_MINT_LIMIT = presaleMintLimit;
         PUBLIC_MINT_LIMIT = publicMintLimit;
-    }
-
-    function PRICE(address addr) public view returns (uint256) {
-        require(block.timestamp > _activeDateTime - PRESALE_HOURS , "Mint is not activated");
-
-        if (block.timestamp < _activeDateTime) {
-            if (_presaleEnabled == true){
-                require(_mappingWhiteList[addr] == true , "Only Whitelist member can mint now");
-            }
-            return PRESALE_PRICE;
-        } else {
-            return PUBLIC_PRICE;
-        }
     }
 
     function setRevealURI(string memory revealURI) external onlyOwner {
         _revealURI = revealURI;
     }
+
     function setBaseURI(string memory baseURI) external onlyOwner {
         _tokenBaseURI = baseURI;
     }
 
-    function airdrop(address to, uint256 numberOfTokens) external onlyOwner {
-        for (uint256 i = 0; i < numberOfTokens; i++) {
-            uint256 tokenId = _publicTSL.current();
+    function airdrop(address[] memory airdropAddress, uint256 numberOfTokens) external onlyOwner {
+        for (uint256 k = 0; k < airdropAddress.length; k++) {
+            for (uint256 i = 0; i < numberOfTokens; i++) {
+                uint256 tokenId = _publicCounter.current();
 
-            if (_publicTSL.current() < TSL_MAX) {
-                _publicTSL.increment();
-                _safeMint(to, tokenId);
-                _mappingMintTimestamp[tokenId] = block.timestamp;
+                if (_publicCounter.current() < MAX_SUPPLY) {
+                    _publicCounter.increment();
+                    if (!_exists(tokenId)) _safeMint(airdropAddress[k], tokenId);
+                }
+            }
+        }
+    }
+
+    function setWhiteListRoot(bytes32 root) external onlyOwner {
+        _whitelistRoot = root;
+    }
+
+    // Verify that a given leaf is in the tree.
+    function isWhiteListed(bytes32 _leafNode, bytes32[] memory proof) internal view returns (bool) {
+        return MerkleProof.verify(proof, _whitelistRoot, _leafNode);
+    }
+
+    // Generate the leaf node (just the hash of tokenID concatenated with the account address)
+    function toLeaf(address account, uint256 index, uint256 amount) internal pure returns (bytes32) {
+        return keccak256(abi.encodePacked(index, account, amount));
+    }
+
+    function presale(uint256 numberOfTokens, uint256 index, uint256 amount, bytes32[] calldata proof) external payable {
+        require( _publicCounter.current() < MAX_SUPPLY, "Purchase would exceed MAX_SUPPLY");
+
+        if (msg.sender != owner()) {
+            require(isWhiteListed(toLeaf(msg.sender, index, amount), proof), "Invalid proof");
+            
+            require(block.timestamp > _activeDateTime - PRESALE_HOURS,"Contract is not active for presale");
+
+            _mappingPresaleMintCount[msg.sender] = _mappingPresaleMintCount[msg.sender] + numberOfTokens;
+            require(_mappingPresaleMintCount[msg.sender] <= PRESALE_MINT_LIMIT, "Overflow for PRESALE_MINT_LIMIT");
+
+            require( PRESALE_PRICE * numberOfTokens <= msg.value, "ETH amount is not sufficient");
+        }
+
+        for (uint256 i = 0; i < numberOfTokens; i++) {
+            uint256 tokenId = _publicCounter.current();
+
+            if (_publicCounter.current() < MAX_SUPPLY) {
+                _publicCounter.increment();
+                _safeMint(msg.sender, tokenId);
             }
         }
     }
 
     function purchase(uint256 numberOfTokens) external payable {
-        require(numberOfTokens <= PURCHASE_LIMIT,"Can only mint up to purchase limit");
-        require(_publicTSL.current() < TSL_MAX,"Purchase would exceed TSL_MAX");
+        require( _publicCounter.current() < MAX_SUPPLY, "Purchase would exceed MAX_SUPPLY");
 
         if (msg.sender != owner()) {
-            _mappingMintCount[msg.sender] = _mappingMintCount[msg.sender] + numberOfTokens;
+            require( block.timestamp > _activeDateTime, "Contract is not active");
 
-            require(PRICE(msg.sender) * numberOfTokens <= msg.value,"ETH amount is not sufficient");
+            _mappingPublicMintCount[msg.sender] = _mappingPublicMintCount[msg.sender] + numberOfTokens;
+            require(_mappingPublicMintCount[msg.sender] <= PUBLIC_MINT_LIMIT, "Overflow for PUBLIC_MINT_LIMIT");
 
-            if (_mappingWhiteList[msg.sender] == false) {
-                require(block.timestamp > _activeDateTime,"Contract is not active");
-                require(_mappingMintCount[msg.sender] <= PUBLIC_MINT_LIMIT,"Overflow for PUBLIC_MINT_LIMIT");
-            } else {
-                if (block.timestamp < _activeDateTime) {
-                    require(block.timestamp > _activeDateTime - PRESALE_HOURS,"Contract is not active for presale");
-                    require(_mappingMintCount[msg.sender] <= PRESALE_MINT_LIMIT,"Overflow for PRESALE_MINT_LIMIT");
-                } else {
-                    require(_mappingMintCount[msg.sender] <= PUBLIC_MINT_LIMIT + PRESALE_MINT_LIMIT,"Overflow for PUBLIC_MINT_LIMIT + PRESALE_MINT_LIMIT");
-                }
-            }
+            require( PUBLIC_PRICE * numberOfTokens <= msg.value, "ETH amount is not sufficient");
         }
 
         for (uint256 i = 0; i < numberOfTokens; i++) {
-            uint256 tokenId = _publicTSL.current();
+            uint256 tokenId = _publicCounter.current();
 
-            if (_publicTSL.current() < TSL_MAX) {
-                _publicTSL.increment();
+            if (_publicCounter.current() < MAX_SUPPLY) {
+                _publicCounter.increment();
                 _safeMint(msg.sender, tokenId);
-                _mappingMintTimestamp[tokenId] = block.timestamp;
             }
         }
     }
 
-    function tokenURI(uint256 tokenId) public view override(ERC721) returns (string memory)
-    {
+    function tokenURI(uint256 tokenId) public view override(ERC721) returns (string memory) {
         require(_exists(tokenId), "Token does not exist");
 
-        if (_mappingMintTimestamp[tokenId] + REVEAL_DELAY < block.timestamp) {
+        if (_activeDateTime + REVEAL_DELAY < block.timestamp) {
             return string(abi.encodePacked(_tokenBaseURI, tokenId.toString()));
         }
 
@@ -1596,10 +1667,10 @@ contract TheStarslab is ERC721Enumerable, Ownable {
     }
 
     function withdraw() external onlyOwner {
-      uint256 balance = address(this).balance;
-      uint256 amount1 = (balance * 9500) / 10000; // 95%
-      uint256 amount2 = (balance * 500) / 10000; // 5%
-      _PaymentAddress1.transfer(amount1);
-      _PaymentAddress2.transfer(amount2);
+        uint256 balance = address(this).balance;
+        uint256 amount1 = (balance * 9500) / 10000; // 95%
+        uint256 amount2 = (balance * 500) / 10000; // 5%
+        _PaymentAddress1.transfer(amount1);
+        _PaymentAddress2.transfer(amount2);
     }
 }
